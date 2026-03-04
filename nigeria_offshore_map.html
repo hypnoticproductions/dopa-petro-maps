@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ef8cfe9b8d29bfae9e909dc833cd5471 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; left: 50px; width: 400px;
+                background-color: white; 
+                border: 2px solid red;
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 9999;
+                font-family: Arial;">
+        <h4 style="margin:0;color:red">Nigeria Offshore FPSO (Bonga/Egina)</h4>
+        <p style="margin:5px 0 0 0;font-size:12px">
+            DOPA-PETRO Operational Corridor<br>
+            Coords: 4.1667°N, 4.7500°E
+        </p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_ef8cfe9b8d29bfae9e909dc833cd5471" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ef8cfe9b8d29bfae9e909dc833cd5471 = L.map(
+                "map_ef8cfe9b8d29bfae9e909dc833cd5471",
+                {
+                    center: [4.1667, 4.75],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ce9df2c88d8fb6da4affc3a7fe8526e3 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ce9df2c88d8fb6da4affc3a7fe8526e3.addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+            var tile_layer_d9dc34b4d2c05ee4af64b9f28c756c56 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d9dc34b4d2c05ee4af64b9f28c756c56.addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+            var marker_191813905686036ee0027f2d73f2b170 = L.marker(
+                [4.1833, 4.4833],
+                {
+}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+            var icon_feb6b86a5d0c4cd9eda381e4f9365f89 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3660552b1e71f6e13f959657d14674d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c0c73d2be92f6ea8631c177e8b21749 = $(`<div id="html_9c0c73d2be92f6ea8631c177e8b21749" style="width: 100.0%; height: 100.0%;">Bonga FPSO</div>`)[0];
+                popup_3660552b1e71f6e13f959657d14674d5.setContent(html_9c0c73d2be92f6ea8631c177e8b21749);
+            
+        
+
+        marker_191813905686036ee0027f2d73f2b170.bindPopup(popup_3660552b1e71f6e13f959657d14674d5)
+        ;
+
+        
+    
+    
+            marker_191813905686036ee0027f2d73f2b170.bindTooltip(
+                `<div>
+                     Bonga FPSO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_191813905686036ee0027f2d73f2b170.setIcon(icon_feb6b86a5d0c4cd9eda381e4f9365f89);
+            
+    
+            var marker_a94a4ec46c6513ce70151cde53ce9559 = L.marker(
+                [4.2333, 4.5167],
+                {
+}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+            var icon_ece839a5af628091213105608f4c412f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cceb116291e8db8530215c62eeb3692d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b745813f860c472cecc63f8c276a5e0e = $(`<div id="html_b745813f860c472cecc63f8c276a5e0e" style="width: 100.0%; height: 100.0%;">Egina FPSO</div>`)[0];
+                popup_cceb116291e8db8530215c62eeb3692d.setContent(html_b745813f860c472cecc63f8c276a5e0e);
+            
+        
+
+        marker_a94a4ec46c6513ce70151cde53ce9559.bindPopup(popup_cceb116291e8db8530215c62eeb3692d)
+        ;
+
+        
+    
+    
+            marker_a94a4ec46c6513ce70151cde53ce9559.bindTooltip(
+                `<div>
+                     Egina FPSO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a94a4ec46c6513ce70151cde53ce9559.setIcon(icon_ece839a5af628091213105608f4c412f);
+            
+    
+            var marker_a8880226789ade1ce0bc9a8f2ae29783 = L.marker(
+                [4.0833, 4.7833],
+                {
+}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+            var icon_d5ddbfa91150a4fc5a491e344332b00e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_272e093215dfdd858f99a5080ee4c2c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2edffa539ddf400f096da5d0b9a214b2 = $(`<div id="html_2edffa539ddf400f096da5d0b9a214b2" style="width: 100.0%; height: 100.0%;">Akpo FPSO</div>`)[0];
+                popup_272e093215dfdd858f99a5080ee4c2c3.setContent(html_2edffa539ddf400f096da5d0b9a214b2);
+            
+        
+
+        marker_a8880226789ade1ce0bc9a8f2ae29783.bindPopup(popup_272e093215dfdd858f99a5080ee4c2c3)
+        ;
+
+        
+    
+    
+            marker_a8880226789ade1ce0bc9a8f2ae29783.bindTooltip(
+                `<div>
+                     Akpo FPSO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a8880226789ade1ce0bc9a8f2ae29783.setIcon(icon_d5ddbfa91150a4fc5a491e344332b00e);
+            
+    
+            var marker_9bf5715ea57dae91f3bfd551f625c813 = L.marker(
+                [4.45, 4.6167],
+                {
+}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+            var icon_3c754f28e4a815771cc207667ca8ec80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1cc81bb838bf1f07e2862f362de44b55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05f29cce3c62316f1ad4c3702ec9abbf = $(`<div id="html_05f29cce3c62316f1ad4c3702ec9abbf" style="width: 100.0%; height: 100.0%;">Agbami FPSO</div>`)[0];
+                popup_1cc81bb838bf1f07e2862f362de44b55.setContent(html_05f29cce3c62316f1ad4c3702ec9abbf);
+            
+        
+
+        marker_9bf5715ea57dae91f3bfd551f625c813.bindPopup(popup_1cc81bb838bf1f07e2862f362de44b55)
+        ;
+
+        
+    
+    
+            marker_9bf5715ea57dae91f3bfd551f625c813.bindTooltip(
+                `<div>
+                     Agbami FPSO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9bf5715ea57dae91f3bfd551f625c813.setIcon(icon_3c754f28e4a815771cc207667ca8ec80);
+            
+    
+            var circle_b7fe619cd9f53a4956c89ef36de0cef2 = L.circle(
+                [4.1667, 4.75],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 3}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+    
+        var popup_e0f5ba4397ee15030a5b5cae82fe7e9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0ccb77874df6955e09ba11ff2d565d5 = $(`<div id="html_e0ccb77874df6955e09ba11ff2d565d5" style="width: 100.0%; height: 100.0%;">Primary Operations Zone</div>`)[0];
+                popup_e0f5ba4397ee15030a5b5cae82fe7e9a.setContent(html_e0ccb77874df6955e09ba11ff2d565d5);
+            
+        
+
+        circle_b7fe619cd9f53a4956c89ef36de0cef2.bindPopup(popup_e0f5ba4397ee15030a5b5cae82fe7e9a)
+        ;
+
+        
+    
+    
+            var layer_control_00f9479cdb80f651c17777a2970bcf29_layers = {
+                base_layers : {
+                    "esriworldimagery" : tile_layer_ce9df2c88d8fb6da4affc3a7fe8526e3,
+                    "OpenStreetMap" : tile_layer_d9dc34b4d2c05ee4af64b9f28c756c56,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_00f9479cdb80f651c17777a2970bcf29 = L.control.layers(
+                layer_control_00f9479cdb80f651c17777a2970bcf29_layers.base_layers,
+                layer_control_00f9479cdb80f651c17777a2970bcf29_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_ef8cfe9b8d29bfae9e909dc833cd5471);
+        
+</script>
+</html>

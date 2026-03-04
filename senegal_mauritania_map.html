@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1715974166ccfb29facb26d96c520d37 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; left: 50px; width: 400px;
+                background-color: white; 
+                border: 2px solid blue;
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 9999;
+                font-family: Arial;">
+        <h4 style="margin:0;color:blue">Senegal/Mauritania GTA Offshore</h4>
+        <p style="margin:5px 0 0 0;font-size:12px">
+            DOPA-PETRO Operational Corridor<br>
+            Coords: 16.5833°N, -16.7500°E
+        </p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_1715974166ccfb29facb26d96c520d37" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1715974166ccfb29facb26d96c520d37 = L.map(
+                "map_1715974166ccfb29facb26d96c520d37",
+                {
+                    center: [16.5833, -16.75],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_983f20482b5bb815f600b1e41a33769b = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_983f20482b5bb815f600b1e41a33769b.addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var tile_layer_1fee29ce7d5f927f8e193b143f1c02d9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1fee29ce7d5f927f8e193b143f1c02d9.addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var marker_7be86600619e0017c91aadb00251889a = L.marker(
+                [16.5833, -16.75],
+                {
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var icon_f26e86466a74f4b2a248987c0f851a46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cba44bfe00755e903019a91f7bb48f57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08b8b20b6265154ed74086234895b702 = $(`<div id="html_08b8b20b6265154ed74086234895b702" style="width: 100.0%; height: 100.0%;">GTA Hub Terminal</div>`)[0];
+                popup_cba44bfe00755e903019a91f7bb48f57.setContent(html_08b8b20b6265154ed74086234895b702);
+            
+        
+
+        marker_7be86600619e0017c91aadb00251889a.bindPopup(popup_cba44bfe00755e903019a91f7bb48f57)
+        ;
+
+        
+    
+    
+            marker_7be86600619e0017c91aadb00251889a.bindTooltip(
+                `<div>
+                     GTA Hub Terminal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7be86600619e0017c91aadb00251889a.setIcon(icon_f26e86466a74f4b2a248987c0f851a46);
+            
+    
+            var marker_5903521c817fea0301cfe5675065fb09 = L.marker(
+                [13.6167, -17.2667],
+                {
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var icon_358fc4f4596706c4c67790dfc99bdd8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ed0d625b56a3245879ee8c382cac657a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2b9368974af42a522685de0d7e6574a = $(`<div id="html_a2b9368974af42a522685de0d7e6574a" style="width: 100.0%; height: 100.0%;">Sangomar FPSO</div>`)[0];
+                popup_ed0d625b56a3245879ee8c382cac657a.setContent(html_a2b9368974af42a522685de0d7e6574a);
+            
+        
+
+        marker_5903521c817fea0301cfe5675065fb09.bindPopup(popup_ed0d625b56a3245879ee8c382cac657a)
+        ;
+
+        
+    
+    
+            marker_5903521c817fea0301cfe5675065fb09.bindTooltip(
+                `<div>
+                     Sangomar FPSO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5903521c817fea0301cfe5675065fb09.setIcon(icon_358fc4f4596706c4c67790dfc99bdd8e);
+            
+    
+            var marker_5d200ce90d03b2773dea4ffb4cfef19a = L.marker(
+                [14.7167, -17.4677],
+                {
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var icon_c3cfdcc227692e5657e2cba909151811 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd984324a2665490241fe31b4f927bde = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9648ec603cd08ffdda8f2f78cce5262e = $(`<div id="html_9648ec603cd08ffdda8f2f78cce5262e" style="width: 100.0%; height: 100.0%;">Dakar</div>`)[0];
+                popup_fd984324a2665490241fe31b4f927bde.setContent(html_9648ec603cd08ffdda8f2f78cce5262e);
+            
+        
+
+        marker_5d200ce90d03b2773dea4ffb4cfef19a.bindPopup(popup_fd984324a2665490241fe31b4f927bde)
+        ;
+
+        
+    
+    
+            marker_5d200ce90d03b2773dea4ffb4cfef19a.bindTooltip(
+                `<div>
+                     Dakar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5d200ce90d03b2773dea4ffb4cfef19a.setIcon(icon_c3cfdcc227692e5657e2cba909151811);
+            
+    
+            var marker_c8e3c76b6887a2c6234937d7b830f534 = L.marker(
+                [16.0333, -16.5],
+                {
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var icon_9fcfcaebbd47b52dc52d1611fa88ef9e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb841479d570f8d859dde34f7c87b09a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1333bb32bb28df07b4888954e078ab40 = $(`<div id="html_1333bb32bb28df07b4888954e078ab40" style="width: 100.0%; height: 100.0%;">Saint-Louis</div>`)[0];
+                popup_bb841479d570f8d859dde34f7c87b09a.setContent(html_1333bb32bb28df07b4888954e078ab40);
+            
+        
+
+        marker_c8e3c76b6887a2c6234937d7b830f534.bindPopup(popup_bb841479d570f8d859dde34f7c87b09a)
+        ;
+
+        
+    
+    
+            marker_c8e3c76b6887a2c6234937d7b830f534.bindTooltip(
+                `<div>
+                     Saint-Louis
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8e3c76b6887a2c6234937d7b830f534.setIcon(icon_9fcfcaebbd47b52dc52d1611fa88ef9e);
+            
+    
+            var marker_531ade8b9ec251915302a89f95a33f97 = L.marker(
+                [18.0735, -15.9582],
+                {
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+            var icon_040498123f473bee7c307f3bc0269162 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f111ea2a02155b21a77d34a7ee48a0b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a289f5dd8ce491209cee56596dfc6aef = $(`<div id="html_a289f5dd8ce491209cee56596dfc6aef" style="width: 100.0%; height: 100.0%;">Nouakchott</div>`)[0];
+                popup_f111ea2a02155b21a77d34a7ee48a0b8.setContent(html_a289f5dd8ce491209cee56596dfc6aef);
+            
+        
+
+        marker_531ade8b9ec251915302a89f95a33f97.bindPopup(popup_f111ea2a02155b21a77d34a7ee48a0b8)
+        ;
+
+        
+    
+    
+            marker_531ade8b9ec251915302a89f95a33f97.bindTooltip(
+                `<div>
+                     Nouakchott
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_531ade8b9ec251915302a89f95a33f97.setIcon(icon_040498123f473bee7c307f3bc0269162);
+            
+    
+            var circle_e3b246be40f7f2f9a2da19e224536670 = L.circle(
+                [16.5833, -16.75],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 3}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+    
+        var popup_3a747e7490212e8a6d1f01dfacd56989 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c91234c9fc26d158782ea3c4883e9459 = $(`<div id="html_c91234c9fc26d158782ea3c4883e9459" style="width: 100.0%; height: 100.0%;">Primary Operations Zone</div>`)[0];
+                popup_3a747e7490212e8a6d1f01dfacd56989.setContent(html_c91234c9fc26d158782ea3c4883e9459);
+            
+        
+
+        circle_e3b246be40f7f2f9a2da19e224536670.bindPopup(popup_3a747e7490212e8a6d1f01dfacd56989)
+        ;
+
+        
+    
+    
+            var layer_control_3f1ce870bc9fac414e47a783bdd6623e_layers = {
+                base_layers : {
+                    "esriworldimagery" : tile_layer_983f20482b5bb815f600b1e41a33769b,
+                    "OpenStreetMap" : tile_layer_1fee29ce7d5f927f8e193b143f1c02d9,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_3f1ce870bc9fac414e47a783bdd6623e = L.control.layers(
+                layer_control_3f1ce870bc9fac414e47a783bdd6623e_layers.base_layers,
+                layer_control_3f1ce870bc9fac414e47a783bdd6623e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_1715974166ccfb29facb26d96c520d37);
+        
+</script>
+</html>

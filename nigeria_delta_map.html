@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5bbe9d50399a72dc8c6d4e7bb8194631 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; left: 50px; width: 400px;
+                background-color: white; 
+                border: 2px solid darkred;
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 9999;
+                font-family: Arial;">
+        <h4 style="margin:0;color:darkred">Nigeria Niger Delta Swamp</h4>
+        <p style="margin:5px 0 0 0;font-size:12px">
+            DOPA-PETRO Operational Corridor<br>
+            Coords: 4.5833°N, 6.6667°E
+        </p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_5bbe9d50399a72dc8c6d4e7bb8194631" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5bbe9d50399a72dc8c6d4e7bb8194631 = L.map(
+                "map_5bbe9d50399a72dc8c6d4e7bb8194631",
+                {
+                    center: [4.5833, 6.6667],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bd92723865512b44dc13152975738ec9 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bd92723865512b44dc13152975738ec9.addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var tile_layer_5dcd467a4a7561c99b6602b5b2b0122b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5dcd467a4a7561c99b6602b5b2b0122b.addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var marker_f592b6fb63dde9b90adcfa82a9e3e5bd = L.marker(
+                [4.55, 6.6],
+                {
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var icon_27b21a87a7b2ee939b19d5f0f824c1ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc5ee05108469149b4f6dd439dbe51eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13c71a91afde319f471a5633fb06a24c = $(`<div id="html_13c71a91afde319f471a5633fb06a24c" style="width: 100.0%; height: 100.0%;">Nembe Creek 4</div>`)[0];
+                popup_cc5ee05108469149b4f6dd439dbe51eb.setContent(html_13c71a91afde319f471a5633fb06a24c);
+            
+        
+
+        marker_f592b6fb63dde9b90adcfa82a9e3e5bd.bindPopup(popup_cc5ee05108469149b4f6dd439dbe51eb)
+        ;
+
+        
+    
+    
+            marker_f592b6fb63dde9b90adcfa82a9e3e5bd.bindTooltip(
+                `<div>
+                     Nembe Creek 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f592b6fb63dde9b90adcfa82a9e3e5bd.setIcon(icon_27b21a87a7b2ee939b19d5f0f824c1ef);
+            
+    
+            var marker_6284e2929cc1e4f144e0aa9cbae52b5f = L.marker(
+                [4.45, 7.1667],
+                {
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var icon_82e4e08460c9dc295c39f09e5b81da33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_29c09da4a5cd52443c08fd0eefbe2e1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5957f4c782482446987963833dd493fe = $(`<div id="html_5957f4c782482446987963833dd493fe" style="width: 100.0%; height: 100.0%;">Bonny Terminal</div>`)[0];
+                popup_29c09da4a5cd52443c08fd0eefbe2e1b.setContent(html_5957f4c782482446987963833dd493fe);
+            
+        
+
+        marker_6284e2929cc1e4f144e0aa9cbae52b5f.bindPopup(popup_29c09da4a5cd52443c08fd0eefbe2e1b)
+        ;
+
+        
+    
+    
+            marker_6284e2929cc1e4f144e0aa9cbae52b5f.bindTooltip(
+                `<div>
+                     Bonny Terminal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6284e2929cc1e4f144e0aa9cbae52b5f.setIcon(icon_82e4e08460c9dc295c39f09e5b81da33);
+            
+    
+            var marker_01e523996f7ebd3599f8b77efde676e9 = L.marker(
+                [4.4667, 6.45],
+                {
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var icon_6bc6746195af5503d736cf44da17c704 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23ddd97e4fa7155f51e86544342cdd55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c89aa255f1058973456389606227cea6 = $(`<div id="html_c89aa255f1058973456389606227cea6" style="width: 100.0%; height: 100.0%;">Cawthorne Channel</div>`)[0];
+                popup_23ddd97e4fa7155f51e86544342cdd55.setContent(html_c89aa255f1058973456389606227cea6);
+            
+        
+
+        marker_01e523996f7ebd3599f8b77efde676e9.bindPopup(popup_23ddd97e4fa7155f51e86544342cdd55)
+        ;
+
+        
+    
+    
+            marker_01e523996f7ebd3599f8b77efde676e9.bindTooltip(
+                `<div>
+                     Cawthorne Channel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_01e523996f7ebd3599f8b77efde676e9.setIcon(icon_6bc6746195af5503d736cf44da17c704);
+            
+    
+            var marker_afdb9e7102dee9b22d226ab866f108a1 = L.marker(
+                [5.5167, 5.75],
+                {
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var icon_677e0b1e3d7d16980d02bac24b5a2657 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9922afc6b2df86f53b6c0347cdb5cc92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_654222cafb9899df90736c71d4713e0a = $(`<div id="html_654222cafb9899df90736c71d4713e0a" style="width: 100.0%; height: 100.0%;">Warri</div>`)[0];
+                popup_9922afc6b2df86f53b6c0347cdb5cc92.setContent(html_654222cafb9899df90736c71d4713e0a);
+            
+        
+
+        marker_afdb9e7102dee9b22d226ab866f108a1.bindPopup(popup_9922afc6b2df86f53b6c0347cdb5cc92)
+        ;
+
+        
+    
+    
+            marker_afdb9e7102dee9b22d226ab866f108a1.bindTooltip(
+                `<div>
+                     Warri
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_afdb9e7102dee9b22d226ab866f108a1.setIcon(icon_677e0b1e3d7d16980d02bac24b5a2657);
+            
+    
+            var marker_304ce21156ac04c24adb56a398a2994f = L.marker(
+                [4.8156, 7.0498],
+                {
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+            var icon_f5fc2c065bd59fde19a1342f04853b6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aa4cc0ed6d1e0618b9260c7138749858 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee92e3bc7e17f760fbc41f1858652902 = $(`<div id="html_ee92e3bc7e17f760fbc41f1858652902" style="width: 100.0%; height: 100.0%;">Port Harcourt</div>`)[0];
+                popup_aa4cc0ed6d1e0618b9260c7138749858.setContent(html_ee92e3bc7e17f760fbc41f1858652902);
+            
+        
+
+        marker_304ce21156ac04c24adb56a398a2994f.bindPopup(popup_aa4cc0ed6d1e0618b9260c7138749858)
+        ;
+
+        
+    
+    
+            marker_304ce21156ac04c24adb56a398a2994f.bindTooltip(
+                `<div>
+                     Port Harcourt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_304ce21156ac04c24adb56a398a2994f.setIcon(icon_f5fc2c065bd59fde19a1342f04853b6f);
+            
+    
+            var circle_046c4da7d37f44a25b90ba5ec576d96d = L.circle(
+                [4.5833, 6.6667],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 3}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+    
+        var popup_e8968df1afa947f4ef074a1dbb9feb40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9459ce1e6cd323bf84bcf3ebf198d445 = $(`<div id="html_9459ce1e6cd323bf84bcf3ebf198d445" style="width: 100.0%; height: 100.0%;">Primary Operations Zone</div>`)[0];
+                popup_e8968df1afa947f4ef074a1dbb9feb40.setContent(html_9459ce1e6cd323bf84bcf3ebf198d445);
+            
+        
+
+        circle_046c4da7d37f44a25b90ba5ec576d96d.bindPopup(popup_e8968df1afa947f4ef074a1dbb9feb40)
+        ;
+
+        
+    
+    
+            var layer_control_2cc0af4b57f53bf094ba499c9f1d4b6d_layers = {
+                base_layers : {
+                    "esriworldimagery" : tile_layer_bd92723865512b44dc13152975738ec9,
+                    "OpenStreetMap" : tile_layer_5dcd467a4a7561c99b6602b5b2b0122b,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_2cc0af4b57f53bf094ba499c9f1d4b6d = L.control.layers(
+                layer_control_2cc0af4b57f53bf094ba499c9f1d4b6d_layers.base_layers,
+                layer_control_2cc0af4b57f53bf094ba499c9f1d4b6d_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_5bbe9d50399a72dc8c6d4e7bb8194631);
+        
+</script>
+</html>

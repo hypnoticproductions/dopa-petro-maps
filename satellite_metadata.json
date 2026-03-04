@@ -1,0 +1,44 @@
+{
+  "nigeria_offshore": {
+    "name": "Nigeria Offshore FPSO (Bonga/Egina)",
+    "product_id": "04d8d6a9-27b1-46bf-9064-5521ab128f7e",
+    "product_name": "S2C_MSIL2A_20260302T095031_N0512_R079_T31NFE_20260302T145209.SAFE",
+    "date": "2026-03-02T09:50:31.025000Z",
+    "quicklook": null
+  },
+  "niger_desert": {
+    "name": "Niger Desert NBEP Pipeline",
+    "product_id": "3ded805e-b2a0-4be8-933f-754d9ccc23f8",
+    "product_name": "S2C_MSIL2A_20260302T095031_N0512_R079_T32PNC_20260302T145209.SAFE",
+    "date": "2026-03-02T09:50:31.025000Z",
+    "quicklook": null
+  },
+  "senegal_mauritania": {
+    "name": "Senegal/Mauritania GTA Offshore",
+    "product_id": "1c85f376-5d51-45a3-8b56-b786ea968add",
+    "product_name": "S1A_IW_GRDH_1SDV_20260225T191852_20260225T191917_063380_07F5FD_D662_COG.SAFE",
+    "date": "2026-02-25T19:18:52.261614Z",
+    "quicklook": null
+  },
+  "ghana_forest": {
+    "name": "Ghana Western Region Forest Belt",
+    "product_id": "63719008-8d07-4bd0-b8d6-d9eae89bd3cb",
+    "product_name": "S2C_MSIL1C_20260301T101941_N0512_R065_T30NWM_20260301T154000.SAFE",
+    "date": "2026-03-01T10:19:41.025000Z",
+    "quicklook": null
+  },
+  "uganda_eacop": {
+    "name": "Uganda EACOP Albertine Graben",
+    "product_id": "41e747be-cc25-46ed-8546-e0c7386963b6",
+    "product_name": "S2B_MSIL1C_20260304T075729_N0512_R035_T36NUH_20260304T115024.SAFE",
+    "date": "2026-03-04T07:57:29.024000Z",
+    "quicklook": null
+  },
+  "nigeria_delta": {
+    "name": "Nigeria Niger Delta Swamp",
+    "product_id": "1d436a55-f17a-45d4-a713-cf8bbfa700a4",
+    "product_name": "S2C_MSIL1C_20260302T095031_N0512_R079_T32NKL_20260302T132923.SAFE",
+    "date": "2026-03-02T09:50:31.025000Z",
+    "quicklook": null
+  }
+}

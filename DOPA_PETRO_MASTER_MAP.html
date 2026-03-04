@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_01c902773d6a28f8313f9555611e0a20 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; left: 50px; width: 350px;
+                background-color: rgba(0,0,0,0.8); 
+                border: 2px solid gold;
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 9999;
+                font-family: Arial;
+                color: white;">
+        <h3 style="margin:0;color:gold">DOPA-PETRO Master Operations Map</h3>
+        <p style="margin:5px 0 0 0;font-size:11px">
+            EYES ONLY // DIRECTOR LEVEL // CONFIDENTIAL<br>
+            6 Operational Corridors | West & East Africa
+        </p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_01c902773d6a28f8313f9555611e0a20" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_01c902773d6a28f8313f9555611e0a20 = L.map(
+                "map_01c902773d6a28f8313f9555611e0a20",
+                {
+                    center: [8.0, 5.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8638f9ff92d6c6b135f4db1766122b2c = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8638f9ff92d6c6b135f4db1766122b2c.addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var tile_layer_9db6bbc0190eb532651cfda15f3071ac = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9db6bbc0190eb532651cfda15f3071ac.addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var circle_32353fbb7071bb5c32904f59e5a85065 = L.circle(
+                [4.1667, 4.75],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 3}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+        var popup_103c627834a163a5a430ba80f8f524dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01855aabc63e6a4a8c3aa794935efa16 = $(`<div id="html_01855aabc63e6a4a8c3aa794935efa16" style="width: 100.0%; height: 100.0%;">Nigeria Offshore FPSO (Bonga/Egina)</div>`)[0];
+                popup_103c627834a163a5a430ba80f8f524dd.setContent(html_01855aabc63e6a4a8c3aa794935efa16);
+            
+        
+
+        circle_32353fbb7071bb5c32904f59e5a85065.bindPopup(popup_103c627834a163a5a430ba80f8f524dd)
+        ;
+
+        
+    
+    
+            circle_32353fbb7071bb5c32904f59e5a85065.bindTooltip(
+                `<div>
+                     Nigeria Offshore FPSO (Bonga/Egina)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fb6e559dd13c95d3b59d497bc36e0407 = L.marker(
+                [4.1667, 4.75],
+                {
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var icon_f7e32f9b011172b134c1c9ecd1ac352c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_227d7785eb26807a90a1223c9114d7cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2aa10c8e99a3f23204d47a805269d01 = $(`<div id="html_d2aa10c8e99a3f23204d47a805269d01" style="width: 100.0%; height: 100.0%;"><b>Nigeria Offshore FPSO (Bonga/Egina)</b><br>4 key assets</div>`)[0];
+                popup_227d7785eb26807a90a1223c9114d7cb.setContent(html_d2aa10c8e99a3f23204d47a805269d01);
+            
+        
+
+        marker_fb6e559dd13c95d3b59d497bc36e0407.bindPopup(popup_227d7785eb26807a90a1223c9114d7cb)
+        ;
+
+        
+    
+    
+            marker_fb6e559dd13c95d3b59d497bc36e0407.bindTooltip(
+                `<div>
+                     Nigeria Offshore FPSO (Bonga/Egina)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb6e559dd13c95d3b59d497bc36e0407.setIcon(icon_f7e32f9b011172b134c1c9ecd1ac352c);
+            
+    
+            var circle_0d84f570440f605a981f96a8893a8ff4 = L.circle(
+                [15.5, 9.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 3}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+        var popup_5710c5c144730ed3e5bd6f25d45c83a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1389bdba6bed7499f3ccf1b225ed16c = $(`<div id="html_c1389bdba6bed7499f3ccf1b225ed16c" style="width: 100.0%; height: 100.0%;">Niger Desert NBEP Pipeline</div>`)[0];
+                popup_5710c5c144730ed3e5bd6f25d45c83a2.setContent(html_c1389bdba6bed7499f3ccf1b225ed16c);
+            
+        
+
+        circle_0d84f570440f605a981f96a8893a8ff4.bindPopup(popup_5710c5c144730ed3e5bd6f25d45c83a2)
+        ;
+
+        
+    
+    
+            circle_0d84f570440f605a981f96a8893a8ff4.bindTooltip(
+                `<div>
+                     Niger Desert NBEP Pipeline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_33101ffb0896a908aca71b246449ce5e = L.marker(
+                [15.5, 9.0],
+                {
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var icon_dedd8d53f3beda6b362a10cdfc970479 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_06d5a920e7e6b56d242cb9433df81863 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cfd8e833b6445a6513af23fab94e90b = $(`<div id="html_1cfd8e833b6445a6513af23fab94e90b" style="width: 100.0%; height: 100.0%;"><b>Niger Desert NBEP Pipeline</b><br>5 key assets</div>`)[0];
+                popup_06d5a920e7e6b56d242cb9433df81863.setContent(html_1cfd8e833b6445a6513af23fab94e90b);
+            
+        
+
+        marker_33101ffb0896a908aca71b246449ce5e.bindPopup(popup_06d5a920e7e6b56d242cb9433df81863)
+        ;
+
+        
+    
+    
+            marker_33101ffb0896a908aca71b246449ce5e.bindTooltip(
+                `<div>
+                     Niger Desert NBEP Pipeline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33101ffb0896a908aca71b246449ce5e.setIcon(icon_dedd8d53f3beda6b362a10cdfc970479);
+            
+    
+            var circle_12383b3f52ef1008051a61ee2b7f2f01 = L.circle(
+                [16.5833, -16.75],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 3}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+        var popup_0e472500b51ba992deceb53094f2c5a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89a21c67bcfb891a53e3d791690ca06e = $(`<div id="html_89a21c67bcfb891a53e3d791690ca06e" style="width: 100.0%; height: 100.0%;">Senegal/Mauritania GTA Offshore</div>`)[0];
+                popup_0e472500b51ba992deceb53094f2c5a4.setContent(html_89a21c67bcfb891a53e3d791690ca06e);
+            
+        
+
+        circle_12383b3f52ef1008051a61ee2b7f2f01.bindPopup(popup_0e472500b51ba992deceb53094f2c5a4)
+        ;
+
+        
+    
+    
+            circle_12383b3f52ef1008051a61ee2b7f2f01.bindTooltip(
+                `<div>
+                     Senegal/Mauritania GTA Offshore
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_853e49c740e3d923f3cd3962acf5bdc8 = L.marker(
+                [16.5833, -16.75],
+                {
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var icon_bcefed553c89fe9f5831bbe43ce35cb3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dff81ec4fcbe38e3864ec6823dba9b13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_287eb2a3d8936d9581faf4206449af97 = $(`<div id="html_287eb2a3d8936d9581faf4206449af97" style="width: 100.0%; height: 100.0%;"><b>Senegal/Mauritania GTA Offshore</b><br>5 key assets</div>`)[0];
+                popup_dff81ec4fcbe38e3864ec6823dba9b13.setContent(html_287eb2a3d8936d9581faf4206449af97);
+            
+        
+
+        marker_853e49c740e3d923f3cd3962acf5bdc8.bindPopup(popup_dff81ec4fcbe38e3864ec6823dba9b13)
+        ;
+
+        
+    
+    
+            marker_853e49c740e3d923f3cd3962acf5bdc8.bindTooltip(
+                `<div>
+                     Senegal/Mauritania GTA Offshore
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_853e49c740e3d923f3cd3962acf5bdc8.setIcon(icon_bcefed553c89fe9f5831bbe43ce35cb3);
+            
+    
+            var circle_09c30d8c70117252211ae7f0d7591271 = L.circle(
+                [5.8333, -2.5],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 3}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+        var popup_67b2efc2e1b614bfac0a3693a227b65a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_275d4ec535c66c3250e709a237d559e2 = $(`<div id="html_275d4ec535c66c3250e709a237d559e2" style="width: 100.0%; height: 100.0%;">Ghana Western Region Forest Belt</div>`)[0];
+                popup_67b2efc2e1b614bfac0a3693a227b65a.setContent(html_275d4ec535c66c3250e709a237d559e2);
+            
+        
+
+        circle_09c30d8c70117252211ae7f0d7591271.bindPopup(popup_67b2efc2e1b614bfac0a3693a227b65a)
+        ;
+
+        
+    
+    
+            circle_09c30d8c70117252211ae7f0d7591271.bindTooltip(
+                `<div>
+                     Ghana Western Region Forest Belt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a91eaffb4c29c84d869e574e34cad132 = L.marker(
+                [5.8333, -2.5],
+                {
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var icon_4c0811255b18338ede98402918037e2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a6875c2733ccb446093b2e53fd16bf37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc7b74f74f86e04babbce06beb9ad632 = $(`<div id="html_fc7b74f74f86e04babbce06beb9ad632" style="width: 100.0%; height: 100.0%;"><b>Ghana Western Region Forest Belt</b><br>6 key assets</div>`)[0];
+                popup_a6875c2733ccb446093b2e53fd16bf37.setContent(html_fc7b74f74f86e04babbce06beb9ad632);
+            
+        
+
+        marker_a91eaffb4c29c84d869e574e34cad132.bindPopup(popup_a6875c2733ccb446093b2e53fd16bf37)
+        ;
+
+        
+    
+    
+            marker_a91eaffb4c29c84d869e574e34cad132.bindTooltip(
+                `<div>
+                     Ghana Western Region Forest Belt
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a91eaffb4c29c84d869e574e34cad132.setIcon(icon_4c0811255b18338ede98402918037e2c);
+            
+    
+            var circle_c962c6e0ea03ead28482b04ccedcf5d9 = L.circle(
+                [1.5333, 31.4167],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 3}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+        var popup_ed510ddc2f1dae87a5be154eace791c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_014853671190a7fd15b62fd6f96d707d = $(`<div id="html_014853671190a7fd15b62fd6f96d707d" style="width: 100.0%; height: 100.0%;">Uganda EACOP Albertine Graben</div>`)[0];
+                popup_ed510ddc2f1dae87a5be154eace791c9.setContent(html_014853671190a7fd15b62fd6f96d707d);
+            
+        
+
+        circle_c962c6e0ea03ead28482b04ccedcf5d9.bindPopup(popup_ed510ddc2f1dae87a5be154eace791c9)
+        ;
+
+        
+    
+    
+            circle_c962c6e0ea03ead28482b04ccedcf5d9.bindTooltip(
+                `<div>
+                     Uganda EACOP Albertine Graben
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9ba67eb14f8b5b47a2e7f2545cd69a77 = L.marker(
+                [1.5333, 31.4167],
+                {
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var icon_15fb8c6bb538cb3ba7dead089c3087a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_967fdbd22ec84bc8949f4a9f760f5da7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a325f9cd03d55383804ed64095cf7d6 = $(`<div id="html_9a325f9cd03d55383804ed64095cf7d6" style="width: 100.0%; height: 100.0%;"><b>Uganda EACOP Albertine Graben</b><br>4 key assets</div>`)[0];
+                popup_967fdbd22ec84bc8949f4a9f760f5da7.setContent(html_9a325f9cd03d55383804ed64095cf7d6);
+            
+        
+
+        marker_9ba67eb14f8b5b47a2e7f2545cd69a77.bindPopup(popup_967fdbd22ec84bc8949f4a9f760f5da7)
+        ;
+
+        
+    
+    
+            marker_9ba67eb14f8b5b47a2e7f2545cd69a77.bindTooltip(
+                `<div>
+                     Uganda EACOP Albertine Graben
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9ba67eb14f8b5b47a2e7f2545cd69a77.setIcon(icon_15fb8c6bb538cb3ba7dead089c3087a8);
+            
+    
+            var circle_292630daea7840f2058e250171551d4d = L.circle(
+                [4.5833, 6.6667],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 3}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+        var popup_1f7099556fefb6ae67e431f608851b11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90f65718cee64cff9206170dd92426d6 = $(`<div id="html_90f65718cee64cff9206170dd92426d6" style="width: 100.0%; height: 100.0%;">Nigeria Niger Delta Swamp</div>`)[0];
+                popup_1f7099556fefb6ae67e431f608851b11.setContent(html_90f65718cee64cff9206170dd92426d6);
+            
+        
+
+        circle_292630daea7840f2058e250171551d4d.bindPopup(popup_1f7099556fefb6ae67e431f608851b11)
+        ;
+
+        
+    
+    
+            circle_292630daea7840f2058e250171551d4d.bindTooltip(
+                `<div>
+                     Nigeria Niger Delta Swamp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f1a38a44557d41d38ae0889e5a408b0c = L.marker(
+                [4.5833, 6.6667],
+                {
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+    
+            var icon_f588f074359252f62f0ef37d59b7a81d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76a4bf8611b50bf2ecb4d072ff2768fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe30f9548001b1595be546141a9d0452 = $(`<div id="html_fe30f9548001b1595be546141a9d0452" style="width: 100.0%; height: 100.0%;"><b>Nigeria Niger Delta Swamp</b><br>5 key assets</div>`)[0];
+                popup_76a4bf8611b50bf2ecb4d072ff2768fd.setContent(html_fe30f9548001b1595be546141a9d0452);
+            
+        
+
+        marker_f1a38a44557d41d38ae0889e5a408b0c.bindPopup(popup_76a4bf8611b50bf2ecb4d072ff2768fd)
+        ;
+
+        
+    
+    
+            marker_f1a38a44557d41d38ae0889e5a408b0c.bindTooltip(
+                `<div>
+                     Nigeria Niger Delta Swamp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1a38a44557d41d38ae0889e5a408b0c.setIcon(icon_f588f074359252f62f0ef37d59b7a81d);
+            
+    
+            var layer_control_f277dba2c4e3558b838995974c055b1c_layers = {
+                base_layers : {
+                    "esriworldimagery" : tile_layer_8638f9ff92d6c6b135f4db1766122b2c,
+                    "OpenStreetMap" : tile_layer_9db6bbc0190eb532651cfda15f3071ac,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_f277dba2c4e3558b838995974c055b1c = L.control.layers(
+                layer_control_f277dba2c4e3558b838995974c055b1c_layers.base_layers,
+                layer_control_f277dba2c4e3558b838995974c055b1c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_01c902773d6a28f8313f9555611e0a20);
+        
+</script>
+</html>
