@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOPA-PETRO | Operational Corridor Maps</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-bottom: 3px solid #d4af37;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.4em; color: #d4af37; letter-spacing: 4px; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1.1em; color: #8899aa; letter-spacing: 2px; }
+        .header .classification {
+            margin-top: 12px; display: inline-block; border: 1px solid #d4af37;
+            padding: 4px 18px; font-size: 0.75em; letter-spacing: 3px; color: #d4af37;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .master-link {
+            display: block; background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            border: 2px solid #d4af37; border-radius: 8px; padding: 30px;
+            text-align: center; text-decoration: none; margin-bottom: 40px; transition: all 0.3s ease;
+        }
+        .master-link:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(212,175,55,0.3); border-color: #f0d060; }
+        .master-link h2 { color: #d4af37; font-size: 1.6em; margin-bottom: 6px; }
+        .master-link p { color: #8899aa; font-size: 0.95em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+        .card {
+            background: #141420; border: 1px solid #2a2a3a; border-left: 4px solid;
+            border-radius: 6px; padding: 24px; text-decoration: none; display: block; transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); border-color: #4a4a5a; }
+        .card .corridor-id { font-size: 0.75em; letter-spacing: 2px; color: #666; margin-bottom: 6px; }
+        .card h3 { font-size: 1.2em; margin-bottom: 8px; }
+        .card .coords { font-family: 'Courier New', monospace; font-size: 0.85em; color: #6a8a6a; margin-bottom: 10px; }
+        .card .desc { font-size: 0.85em; color: #888; line-height: 1.5; }
+        .card .tag { display: inline-block; margin-top: 12px; padding: 3px 10px; border-radius: 3px; font-size: 0.7em; letter-spacing: 1px; color: #fff; }
+        .c1 { border-left-color: #8b0000; } .c1 h3 { color: #cd5c5c; } .c1 .tag { background: #8b0000; }
+        .c2 { border-left-color: #dc3545; } .c2 h3 { color: #e07070; } .c2 .tag { background: #dc3545; }
+        .c3 { border-left-color: #28a745; } .c3 h3 { color: #5cb85c; } .c3 .tag { background: #28a745; }
+        .c4 { border-left-color: #e88a1a; } .c4 h3 { color: #e8a84a; } .c4 .tag { background: #e88a1a; }
+        .c5 { border-left-color: #8a2be2; } .c5 h3 { color: #a855f7; } .c5 .tag { background: #8a2be2; }
+        .c6 { border-left-color: #1a6adb; } .c6 h3 { color: #5b9aef; } .c6 .tag { background: #1a6adb; }
+        .footer { text-align: center; padding: 40px 20px; color: #444; font-size: 0.8em; border-top: 1px solid #1a1a2a; margin-top: 40px; }
+        .footer span { color: #d4af37; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DOPA-PETRO</h1>
+        <div class="subtitle">Dead Zone Engineer's Bible v3.1 &#8212; Operational Corridor Maps</div>
+        <div class="classification">DIRECTOR LEVEL // CONFIDENTIAL</div>
+    </div>
+    <div class="container">
+        <a href="DOPA_PETRO_MASTER_MAP.html" class="master-link">
+            <h2>&#9670; MASTER OPERATIONS MAP &#9670;</h2>
+            <p>All 6 corridors &#8212; Pan-Africa satellite overlay &#8212; Interactive</p>
+        </a>
+        <div class="grid">
+            <a href="nigeria_delta_map.html" class="card c1">
+                <div class="corridor-id">APPENDIX C.1</div>
+                <h3>Niger Delta Mangrove Swamp</h3>
+                <div class="coords">4&#176;35'N, 6&#176;40'E</div>
+                <div class="desc">NCTL/TNP pipeline corridors through mangrove swamp terrain. Bonny Island terminal complex, Nembe Creek trunk line routing.</div>
+                <span class="tag">ONSHORE / SWAMP</span>
+            </a>
+            <a href="nigeria_offshore_map.html" class="card c2">
+                <div class="corridor-id">APPENDIX C.2</div>
+                <h3>Nigeria Offshore FPSOs</h3>
+                <div class="coords">4&#176;10'N, 4&#176;45'E</div>
+                <div class="desc">Bonga, Agbami, Egina deepwater FPSO assets. Gulf of Guinea operational zone, subsea tie-back architecture.</div>
+                <span class="tag">OFFSHORE / DEEPWATER</span>
+            </a>
+            <a href="ghana_forest_map.html" class="card c3">
+                <div class="corridor-id">APPENDIX C.3</div>
+                <h3>Ghana Western Region</h3>
+                <div class="coords">5&#176;50'N, 2&#176;30'W</div>
+                <div class="desc">Jubilee/TEN offshore fields, Enchi-Sefwi Wiawso corridor. Forest belt terrain, artisanal mining overlap zones.</div>
+                <span class="tag">FOREST / OFFSHORE</span>
+            </a>
+            <a href="niger_desert_map.html" class="card c4">
+                <div class="corridor-id">APPENDIX C.4</div>
+                <h3>Niger NBEP Pipeline</h3>
+                <div class="coords">15&#176;30'N, 9&#176;00'E</div>
+                <div class="desc">1,950km Agadem to Seme terminal. Niger-Benin Export Pipeline through Sahel/Sahara terrain, extreme temperature variance.</div>
+                <span class="tag">DESERT / PIPELINE</span>
+            </a>
+            <a href="uganda_eacop_map.html" class="card c5">
+                <div class="corridor-id">APPENDIX C.5</div>
+                <h3>Uganda EACOP &#8212; Albertine Graben</h3>
+                <div class="coords">1&#176;32'N, 31&#176;25'E</div>
+                <div class="desc">Kabaale Industrial Park, Hoima refinery zone. East Africa Crude Oil Pipeline, Albertine Graben basin operations.</div>
+                <span class="tag">INLAND / PIPELINE</span>
+            </a>
+            <a href="senegal_mauritania_map.html" class="card c6">
+                <div class="corridor-id">APPENDIX C.6</div>
+                <h3>Senegal/Mauritania GTA &amp; Sangomar</h3>
+                <div class="coords">16&#176;35'N, 16&#176;45'W</div>
+                <div class="desc">Greater Tortue Ahmeyim LNG, Sangomar FPSO. Cross-border offshore gas development, Atlantic deepwater.</div>
+                <span class="tag">OFFSHORE / LNG</span>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <span>DOPA-TECH</span> &mdash; Sovereign Technology Infrastructure<br>
+        Registered: Saint Lucia &bull; Maps powered by Leaflet.js, ESRI World Imagery, OpenStreetMap, Copernicus Sentinel
+    </div>
+</body>
+</html>
