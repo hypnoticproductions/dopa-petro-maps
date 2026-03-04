@@ -1,1 +1,5 @@
-{\n  \"buildCommand\": \"\",\n  \"outputDirectory\": \".\",\n  \"framework\": null,\n  \"rewrites\": [\n    { \"source\": \"/\", \"destination\": \"/index.html\" }\n  ]\n}\n
+{
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "."
+}
